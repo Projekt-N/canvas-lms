@@ -1,0 +1,21 @@
+# This is a basic workflow that is manually triggered
+
+name: Sync Fork
+
+on:
+  
+  workflow_dispatch: # on button click
+
+jobs:
+  sync:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: tgymnich/fork-sync@v1.4
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          owner: nagaed
+          base: stable
+          head: stable
+          merge_method: merge
